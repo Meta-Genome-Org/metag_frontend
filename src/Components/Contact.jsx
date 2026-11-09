@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faLinkedin, faOrcid, faUser } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faLinkedin, faOrcid } from '@fortawesome/free-brands-svg-icons';
 import "../Styles/Contact.css";
 import Logo from '../Assets/Meta-Genome-Logo.svg';
 import olly from '../Assets/Olly_img.jpg'
