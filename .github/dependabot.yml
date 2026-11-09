@@ -21,3 +21,12 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     labels: [dependencies, npm]
+    # One PR per run for minor/patch updates and one for security fixes, so
+    # they don't conflict over package-lock.json. Majors still come singly.
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        update-types: [minor, patch]
+      npm-security:
+        applies-to: security-updates
+        update-types: [minor, patch]
