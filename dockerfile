@@ -18,6 +18,11 @@ RUN npm run build
 #deploy 
 FROM nginx:alpine@sha256:713fc2ebfd92e8217db451477182ee91944b123d2b1ee9fd5a8c6e91ca6c3a11 as production
 
+# Apply Alpine security fixes the base image doesn't include yet. CI passes
+# today's date as OS_UPDATES_DATE so this layer is rebuilt at least daily.
+ARG OS_UPDATES_DATE
+RUN apk upgrade --no-cache
+
 COPY --from=build /build /var/www/html/
 COPY ./conf/subsite.conf /etc/nginx/conf.d/default.conf
 
