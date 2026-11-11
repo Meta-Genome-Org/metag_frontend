@@ -11,7 +11,7 @@
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^16.3.3",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/user-event": "^14.6.8",
     "axios": "^1.21.0",
     "plotly.js": "^2.35.3",
     "react": "^19.3.1",
