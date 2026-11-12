@@ -1,11 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Plot from 'react-plotly.js';
+import createPlotlyComponent from 'react-plotly.js/factory';
+import Plotly from 'plotly.js/dist/plotly.min.js';
 import useWindowDimensions from '../Utils/useWindowDimensions';
 import Dropdown from './Dropdown';
 import convertData from  '../Utils/convertData';
 import Logo from '../Assets/meta_gemone_logo_blue.png'
 import "@fontsource/lato";
+
+// react-plotly.js 4's default entry imports 'plotly.js/dist/plotly' without an
+// extension, which webpack 5 rejects from an ES module. Pass Plotly in instead.
+const Plot = createPlotlyComponent(Plotly);
 
 function Home () {
     const { height, } = useWindowDimensions();
